@@ -1,0 +1,22 @@
+<div class="container mt-2">
+  <div *ngIf="pizza" class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{pizza?.image}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{pizza?.nom}}</h5>
+          <p *ngIf="pizza.isVege" class="card-text">La pizza et vege</p>
+          <p *ngIf="!pizza.isVege" class="card-text">La pizza contient de la viande</p>
+          <p class="card-text"><small class="text-body-secondary">La pizza fait : {{pizza.taille}}cm</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!pizza" >
+  <h2 class="text-center">Pas de pizza trouver avec cette Id</h2>
+</div>
+

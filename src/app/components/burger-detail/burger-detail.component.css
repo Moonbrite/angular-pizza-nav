@@ -1,0 +1,12 @@
+img {
+  max-width: 300px;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=burger-detail.component.css.map */

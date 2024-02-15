@@ -1,0 +1,12 @@
+<div *ngFor="let pizza of pizzas" class="w-100 d-flex justify-content-center my-3 ">
+  <div class="card text-bg-dark w-50">
+    <div class="pizza-image">
+      <img src="{{pizza.image}}" class="card-img" alt="...">
+    </div>
+    <div class="card-img-overlay">
+      <h2 class="card-title">{{pizza.nom}}</h2>
+      <button class="btn btn-light" [routerLink]="['/pizza',pizza.id]" >En savoir plus</button>
+    </div>
+  </div>
+</div>
+

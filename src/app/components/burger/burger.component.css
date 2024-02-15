@@ -1,0 +1,12 @@
+.les-burger {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  gap: 25px;
+}
+.les-burger img {
+  height: 350px;
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=burger.component.css.map */

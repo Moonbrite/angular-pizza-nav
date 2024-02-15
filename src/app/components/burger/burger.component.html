@@ -1,0 +1,10 @@
+<section class="les-burger">
+  <div *ngFor="let burger of burgers" class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{burger.name}}</h5>
+    </div>
+    <img src="https://lacuisineensemble.fr/wp-content/uploads/2022/02/recette-burger-maison.jpg" class="card-img-bottom" alt="...">
+    <button class="btn btn-light" [routerLink]="['/burger',burger.id]" >En savoir plus</button>
+  </div>
+</section>
+
