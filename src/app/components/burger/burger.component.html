@@ -1,10 +1,26 @@
-<section class="les-burger">
-  <div *ngFor="let burger of burgers" class="card">
-    <div class="card-body">
-      <h5 class="card-title">{{burger.name}}</h5>
+<div *ngFor="let burger of burgers" class="w-100 d-flex justify-content-center my-3 ">
+  <div class="card text-bg-dark w-50">
+    <div class="pizza-image">
+      <img src="{{burger.image}}" class="card-img" alt="...">
     </div>
-    <img src="https://lacuisineensemble.fr/wp-content/uploads/2022/02/recette-burger-maison.jpg" class="card-img-bottom" alt="...">
-    <button class="btn btn-light" [routerLink]="['/burger',burger.id]" >En savoir plus</button>
+    <div class="card-img-overlay">
+      <h2 class="card-title">{{burger.name}}</h2>
+      <button class="btn btn-light" [routerLink]="['/burger',burger.id]" >En savoir plus</button>
+      <button class="btn btn-danger my-3" (click)="open(content,burger)">Suprimer</button>
+    </div>
   </div>
-</section>
+</div>
+
+
+<ng-template #content #burger let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Supression du burger</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close(burger)">Supression</button>
+  </div>
+</ng-template>
+
+
 

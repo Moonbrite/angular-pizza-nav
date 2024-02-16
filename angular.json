@@ -30,7 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.scss",
+              "src/form.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },

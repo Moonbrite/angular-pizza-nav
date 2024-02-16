@@ -1,6 +1,6 @@
 export class Pizza {
 
-  constructor(id: number, nom: string, taille: number, isVege: boolean,image:string) {
+  constructor(id?: number, nom?: string, taille?: number, isVege?: boolean,image?:string) {
     this.id = id;
     this.nom = nom;
     this.taille = taille;
@@ -8,11 +8,11 @@ export class Pizza {
     this.image = image;
   }
 
-  id:number;
-  nom:string;
-  taille:number;
-  isVege:boolean;
-  image:string
+  id?:number;
+  nom?:string;
+  taille?:number;
+  isVege?:boolean;
+  image?:string
 
 
 }

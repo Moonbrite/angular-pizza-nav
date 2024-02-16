@@ -1,1 +1,31 @@
+.pizza {
+  position: relative;
+  &:hover .pizza-add{
+    display: block;
+  }
+}
 
+.pizza-add {
+  display: none;
+  list-style: none;
+  position: absolute;
+  background-color: rgba(40, 4, 0, 0.86);
+  padding: 10px 30px 10px 10px;
+  color: white;
+  left: 0;
+  text-decoration: none;
+  border-radius: 2px;
+  justify-content: center;
+  z-index: 10;
+  &:hover{
+    background-color: rgba(70, 13, 0, 0.86);
+  }
+}
+
+ul {
+  list-style: none;
+  a{
+    text-transform: capitalize;
+    justify-content: left;
+  }
+}

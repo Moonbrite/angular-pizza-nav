@@ -9,11 +9,17 @@
       <li class="nav-item active">
         <a class="nav-link active" aria-current="page" [routerLink]="['']" >Home</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item  pizza">
         <a class="nav-link" [routerLink]="['/pizza']" >Pizza</a>
+        <ul>
+          <li><a class=" pizza-add" [routerLink]="['/pizza/add']" >add</a></li>
+        </ul>
       </li>
-      <li class="nav-item">
+      <li class="nav-item pizza">
         <a class="nav-link"[routerLink]="['/burger']">Burger</a>
+        <ul>
+          <li><a class=" pizza-add" [routerLink]="['/burger/add']" >add</a></li>
+        </ul>
       </li>
     </ul>
   </div>

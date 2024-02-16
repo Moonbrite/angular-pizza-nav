@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, inject, TemplateRef} from '@angular/core';
 import {MenuComponent} from "../menu/menu.component";
-import {Pizza} from "../../models/pizza";
 import {Burger} from "../../models/burger";
 import {BurgerService} from "../../service/burger.service";
 import {RouterLink} from "@angular/router";
 import {NgForOf} from "@angular/common";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {ToastrService} from "ngx-toastr";
+
 
 @Component({
   selector: 'app-burger',
@@ -21,8 +23,20 @@ export class BurgerComponent {
 
   burgers :Burger [] = [];
 
-  constructor(BurgerService :BurgerService ) {
-    this.burgers = BurgerService.burgers
+  private modalService = inject(NgbModal);
+
+  constructor(private burgerService :BurgerService, private toastService :ToastrService) {
+    this.burgers = burgerService.burgers
   }
+
+  open(content: TemplateRef<any>, burger: Burger) {
+    this.modalService.open(content, { ariaLabelledBy: 'Veuiller confirmer la supression' }).result.then(
+      (result) => {
+        this.burgers = this.burgerService.remove(burger);
+        this.toastService.error("Burger suprimer")
+      },
+    );
+  }
+
 
 }

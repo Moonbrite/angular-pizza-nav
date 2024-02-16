@@ -6,7 +6,24 @@
     <div class="card-img-overlay">
       <h2 class="card-title">{{pizza.nom}}</h2>
       <button class="btn btn-light" [routerLink]="['/pizza',pizza.id]" >En savoir plus</button>
+      <button class="btn btn-danger my-3" (click)="open(content,pizza)">Suprimer</button>
     </div>
   </div>
 </div>
+
+<div *ngIf="pizzas.length === 0">
+  <h2 class="text-danger text-center my-3">Pas de pizza</h2>
+</div>
+
+
+<ng-template #content #pizza let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Supression de la pizza</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close(pizza)">Supression</button>
+  </div>
+</ng-template>
+
 
